@@ -1,0 +1,34 @@
+
+:root {
+    --title-font: 'Tobias', sans-serif;
+    --main-font: 'Apercu Pro', sans-serif;
+    
+    --accent: #7D1D3F;
+    --accent-light: #a32f57;
+    --accent-dark: #610e2b;
+
+    --dark: #0A1E25;
+
+    --light-accent: #F5F5EB;
+
+    --white: #FFF;
+    --black: #000;
+
+    --container-padding: 15px;
+}
+
+@font-face {
+    @include font-include('Apercu Pro', 400, swap, normal, 'ApercuPro-Regular');
+}
+
+@font-face {
+    @include font-include('Tobias', 500, swap, normal, 'Tobias-Medium');
+}
+
+@font-face {
+    @include font-include('Tobias', 700, swap, normal, 'Tobias-Bold');
+}
+
+@font-face {
+    @include font-include('PT Sans', 400, swap, normal, 'PTSans-Regular');
+}

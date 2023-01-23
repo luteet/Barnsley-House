@@ -1,0 +1,68 @@
+
+.main-title {
+    font-family: var(--title-font);
+    font-weight: 700;
+    font-size: 4.875rem;
+    line-height: 110%;
+    letter-spacing: -0.015em;
+    text-transform: uppercase;
+
+    margin: 0;
+
+    font-size: 3rem;
+
+    @media (min-width: 675px) {
+        font-size: 3.9375rem;
+        line-height: 99%;
+    }
+
+    @media (min-width: 1015px) {
+        font-size: 4.3125rem;
+    }
+
+    @media (min-width: 1125px) {
+        font-size: 4.875rem;
+    }
+}
+
+.title {
+    
+    font-family: var(--title-font);
+    font-weight: 700;
+
+    font-size: 1.125rem;
+
+    @include _768 {
+        font-size: 1.5rem;
+    }
+
+    @include _992 {
+        font-size: 1.875rem;
+    }
+    
+    &._min {
+
+    }
+}
+
+.section-title {
+
+    font-family: var(--title-font);
+    font-weight: 500;
+    line-height: 119%;
+
+    font-size: 3rem;
+
+    @media (min-width: 855px) {
+        font-size: 3.5625rem;
+    }
+
+    letter-spacing: -0.015em;
+
+    color: var(--dark);
+
+}
+
+.txt-center {
+    text-align: center;
+}

@@ -1,0 +1,21 @@
+@import 'mixin';
+@import 'null';
+@import 'libs';
+@import 'vars';
+@import 'global';
+@import 'font';
+
+@import 'main-sections/header';
+
+
+@import 'pages/index/intro';
+@import 'pages/index/about-us';
+@import 'pages/index/classicaly';
+@import 'pages/index/reasons';
+@import 'pages/index/storeys';
+@import 'pages/index/advantages';
+@import 'pages/index/awards';
+
+
+@import 'main-sections/footer';
+

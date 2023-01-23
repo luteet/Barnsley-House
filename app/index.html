@@ -1,0 +1,312 @@
+@@include("html/_header.html")
+
+		<main class="main section-padding-bottom">
+			<section class="intro section-container section-margin-bottom">
+				<div class="intro__bg">
+					<div class="intro__bg--image">
+						<picture>
+							<source srcset="img/index/intro/image.webp" type="image/webp">
+							<img src="img/index/intro/image.jpg" alt="" width="0" height="0" loading="lazy"
+								class="intro__bg--img">
+						</picture>
+					</div>
+				</div>
+				<div class="intro__content">
+					<h1 class="intro__title main-title">
+						Welcome to
+						barnsley house
+					</h1>
+					<div class="intro__info">
+						<ul class="intro__info--list">
+							<li class="intro__info--item">
+								17:05
+							</li>
+							<li class="intro__info--item">
+								31 °C
+							</li>
+							<li class="intro__info--item">
+								Mostly sunny
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="intro__decor-line"></div>
+			</section>
+			<section class="abous-us section-container section-padding">
+				<div class="abous-us__decor">
+					<div class="abous-us__decor--element">
+						<picture>
+							<source srcset="img/index/about-us/decor.webp" type="image/webp">
+							<img src="img/index/about-us/decor.png" alt="" width="0" height="0" loading="lazy">
+						</picture>
+					</div>
+				</div>
+				<div class="abous-us__image">
+					<div class="abous-us__image--icon">
+						<img src="img/index/about-us/icon.svg" width="28" height="28" loading="lazy" alt="">
+					</div>
+					<div class="abous-us__image--body">
+						<picture>
+							<source srcset="img/index/about-us/image.webp" type="image/webp">
+							<img src="img/index/about-us/image.jpg" alt="" loading="lazy" width="562" height="616"
+								class="abous-us__image--img">
+						</picture>
+					</div>
+				</div>
+				<div class="abous-us__info">
+					<h2 class="abous-us__title section-title">
+						Grow your own story...
+					</h2>
+					<div class="abous-us__text">
+						Let the clocks stop… and time stand still. Steal away to a picture-perfect Cotswold village and stay at
+						your very own country house retreat, nestled in fairytale gardens. Nourish your spirit with reviving
+						treatments in the hideaway garden spa. Dine on delicious dishes with produce picked from the abundant
+						garden…the magical heart and soul of this special place. Intimate and timeless, Barnsley House feels
+						like a best-kept secret… ripe for a spot of romance, or a celebration you’ll never forget.
+					</div>
+					<a href="#" class="abous-us__link">
+						Learn more
+					</a>
+				</div>
+			</section>
+			<section class="classicaly section-padding">
+				<div class="classicaly__body section-dark">
+					<div class="classicaly__header section-container _alt">
+						<h2 class="classicaly__title section-title">
+							Classicaly romantic
+						</h2>
+						<div class="classicaly__nav">
+							<button class="classicaly__nav--arrow slider-round-arrow swiper-button-prev" title="Prev slide"></button>
+							<button class="classicaly__nav--arrow slider-round-arrow swiper-button-next" title="Next slide"></button>
+						</div>
+					</div>
+					<div class="classicaly__slider swiper">
+						<div class="classicaly__slider--list swiper-wrapper">
+							@@loop("html/index/_classicaly-slide.html", [
+								{
+									"image": '1'
+								},
+								{
+									"image": '2'
+								},
+								{
+									"image": '3'
+								},
+							])
+						</div>
+						<div class="classicaly__slider--container">
+							<div class="classicaly__slider--info">
+								<h3 class="classicaly__slider--info-title">
+									A timeless escape of charm
+								</h3>
+								<div class="classicaly__slider--info-text">
+									Leave the kids at home and indulge in a romantic weekend for two... or an unforgettable celebration. From hideaway rooms to a private and romantic secret garden suite
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="abous-us section-container section-padding">
+				<div class="abous-us__decor">
+					<div class="abous-us__decor--element _top">
+						<picture>
+							<source srcset="img/index/about-us/decor-2.webp" type="image/webp">
+							<img src="img/index/about-us/decor-2.png" alt="" width="0" height="0" loading="lazy">
+						</picture>
+					</div>
+					<div class="abous-us__decor--element _left">
+						<picture>
+							<source srcset="img/index/about-us/decor-3.webp" type="image/webp">
+							<img src="img/index/about-us/decor-3.png" alt="" width="0" height="0" loading="lazy">
+						</picture>
+					</div>
+				</div>
+				<div class="abous-us__image">
+					<div class="abous-us__image--icon">
+						<img src="img/index/about-us/icon-2.svg" width="28" height="28" loading="lazy" alt="">
+					</div>
+					<div class="abous-us__image--body">
+						<picture>
+							<source srcset="img/index/about-us/image-2.webp" type="image/webp">
+							<img src="img/index/about-us/image-2.jpg" alt="" loading="lazy" width="562" height="616"
+								class="abous-us__image--img">
+						</picture>
+					</div>
+				</div>
+				<div class="abous-us__info">
+					<h2 class="abous-us__title section-title">
+						Fresh, local, and simply delicious
+					</h2>
+					<div class="abous-us__text">
+						Overlooking the glorious gardens and terrace, a table awaits you in 
+						The Potager, where you can enjoy a wonderful meal in a tranquil and unhurried atmosphere. 
+						Just across the road is The Village Pub, our very own Cotswolds country inn, with hearty 
+						pub fare that's a cut above what you might expect. We're passionate about showcasing fresh, 
+						local ingredients and in true garden-to-plate philosophy, many of our vegetables, 
+						salads and herbs are freshly picked from our kitchen garden every morning. 
+					</div>
+					<a href="#" class="abous-us__link">
+						Learn more
+					</a>
+				</div>
+			</section>
+			<section class="reasons section-padding">
+				<div class="reasons__header section-container">
+					<h2 class="reasons__title section-title">
+						Reasons to
+						visit us
+					</h2>
+					<div class="reasons__text">
+						Located near Cirencester, Barnsley House is the perfect base to discover the Cotswolds… 
+						whether you’re exploring by foot, bike, car… or hot air balloon! From golf and polo, to 
+						cookery courses and theatre plays, these are just some of the activities we recommend, 
+						but if there’s something different you’d like to try.
+					</div>
+				</div>
+				<div class="reasons__wrapper">
+					<div class="reasons__slider swiper">
+						<div class="reasons__slider--list swiper-wrapper">
+							@@loop("html/index/_reasons-slide.html", [
+								{
+									"slide": '1',
+									"title": 'Spa and pool',
+								},
+								{
+									"slide": '2',
+									"title": 'Security',
+								},
+								{
+									"slide": '3',
+									"title": 'Off road',
+								},
+								{
+									"slide": '4',
+									"title": 'Garden',
+								},
+								{
+									"slide": '5',
+									"title": 'Restaurant',
+								},
+							])
+						</div>
+						<div class="reasons__nav">
+							<div class="reasons__nav--block">
+								<button class="reasons__nav--arrow swiper-button-prev" type="Prev slide"></button>
+								<button class="reasons__nav--arrow swiper-button-next" type="Next slide"></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="storeys section-padding">
+				<div class="storeys__decor">
+					<div class="storeys__decor--element">
+						<picture>
+							<source srcset="img/index/storey/decor.webp" type="image/webp">
+							<img src="img/index/storey/decor.png" alt="" width="0" height="0" loading="lazy">
+						</picture>
+					</div>
+				</div>
+				<ul class="storeys__list">
+					@@loop("html/index/_storey.html", [
+						{
+							"image": '1',
+							"title": 'One-storey 2-room cottage',
+							"rooms": '2',
+							"price": '200'
+						},
+						{
+							"image": '2',
+							"title": 'Two-storey 3-room cottage',
+							"rooms": '3.5',
+							"price": '230'
+						},
+						{
+							"image": '3',
+							"title": 'Two-storey 3-room cottage',
+							"rooms": '3',
+							"price": '144'
+						},
+						{
+							"image": '4',
+							"title": 'Two-storey 1-room cottage',
+							"rooms": '1.5',
+							"price": '129'
+						},
+					])
+				</ul>
+			</section>
+			<section class="advantages section-padding section-container _alt">
+				<ul class="advantages__list">
+					@@loop("html/index/_advantage.html", [
+						{
+							"class": '',
+							"image": '1',
+							"imageClass": ' _right',
+							"title": 'Retreat',
+							"text": "Barnsley Spa is a tranquil sanctuary for ultimate relaxation offering a range of indulgent treatments and therapies - tucked away in a corner of our beautiful gardens, it's available for our guests to enjoy for a blissful amount of relaxation and me time during an overnight stay at Barnsley House.",
+						},
+						{
+							"class": ' _reverse',
+							"image": '2',
+							"imageClass": '',
+							"title": 'Awaken',
+							"text": "A secret hideaway enveloped by gorgeous gardens, the spa is designed to help you recharge, revive and feel heavenly from head-to-toe. We believe in the power of nature which is why you'll find natural and botanical elements from the garden all around the spa… indoor plants, tables crafted from tree trunks and lavender placed on treatment beds. The spa lounge boasts simply enchanting views of the surrounding countryside… so relaxation begins as soon as you enter.",
+						},
+						{
+							"class": '',
+							"image": '3',
+							"imageClass": '',
+							"title": 'Weddings',
+							"text": "Say 'I do' in the beautiful surroundings of our gardens, feast on your favourite dishes with a custom menu created for you by our Head Chef… and party till the small hours with your loved ones. And with all the hidden nooks in the gardens and house, there’s no shortage of stunning backdrops for your photos… official and unofficial!",
+						},
+					])
+				</ul>
+			</section>
+			<section class="awards section-padding section-container">
+				<div class="awards__decor">
+					<div class="awards__decor--element">
+						<picture>
+							<source srcset="img/index/awards/decor.webp" type="image/webp">
+							<img src="img/index/awards/decor.png" alt="" width="0" height="0" loading="lazy">
+						</picture>
+					</div>
+				</div>
+				<div class="awards__header">
+					<h2 class="awards__title section-title">
+						Some of our main awards
+					</h2>
+					<div class="awards__nav">
+						<button class="awards__nav--arrow slider-round-arrow swiper-button-prev" title="Prev slide"></button>
+						<button class="awards__nav--arrow slider-round-arrow swiper-button-next" title="Next slide"></button>
+					</div>
+				</div>
+				<div class="awards__slider swiper">
+					<div class="awards__slider--list swiper-wrapper">
+						@@loop("html/index/_award-card.html", [
+							{
+								"text": 'Tripadvisor Traveller’s Choice Award'
+							},
+							{
+								"text": 'UK Tourist Choice'
+							},
+							{
+								"text": 'English'
+							},
+							{
+								"text": 'Tripadvisor Traveller’s Choice Award'
+							},
+							{
+								"text": 'UK Tourist Choice'
+							},
+							{
+								"text": 'English'
+							}
+						])
+					</div>
+				</div>
+			</section>
+		</main>
+
+@@include("html/_footer.html")
