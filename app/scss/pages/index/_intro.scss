@@ -98,6 +98,17 @@
 			text-align: center;
 			letter-spacing: -0.376923px;
 
+			
+			& > span {
+				display: inline-block;
+				overflow: hidden;
+				
+				& > span {
+					display: inline-block;
+					
+				}
+			}
+
 			&:not(:first-child) {
 				border-left: 1px solid rgba(255, 255, 255, 0.46);
 			}

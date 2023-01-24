@@ -1,39 +1,55 @@
 @@include("html/_header.html")
 
 		<main class="main section-padding-bottom">
-			<section class="intro section-container section-margin-bottom">
-				<div class="intro__bg">
+			<section class="intro section-container section-margin-bottom anim-section">
+				<div class="intro__bg anim-element anim-zoom-out" data-index="1" data-delay="0.2" data-duration="2">
 					<div class="intro__bg--image">
 						<picture>
 							<source srcset="img/index/intro/image.webp" type="image/webp">
 							<img src="img/index/intro/image.jpg" alt="" width="0" height="0" loading="lazy"
-								class="intro__bg--img">
+								class="intro__bg--img anim-scroll-image" data-pos="to-bottom" data-anchor=".intro">
 						</picture>
 					</div>
 				</div>
 				<div class="intro__content">
-					<h1 class="intro__title main-title">
-						Welcome to
-						barnsley house
+					<h1 class="intro__title main-title anim-element anim-text" data-index="2" data-delay="0" data-duration="1" data-stagger="0.2">
+						<span class="anim-text-line">
+							<span>Welcome to</span>
+						</span>
+						<span class="anim-text-line">
+							<span>barnsley house</span>
+						</span>
 					</h1>
 					<div class="intro__info">
-						<ul class="intro__info--list">
+						<ul class="intro__info--list anim-element anim-fade-in" data-index="4" data-duration="1">
 							<li class="intro__info--item">
-								17:05
+								<span>
+									<span class="anim-element anim-fade-right" data-index="5" data-duration="1">
+										17:05
+									</span>
+								</span>
 							</li>
 							<li class="intro__info--item">
-								31 °C
+								<span>
+									<span class="anim-element anim-zoom-in" data-index="6" data-duration="1">
+										31 °C
+									</span>
+								</span>
 							</li>
 							<li class="intro__info--item">
-								Mostly sunny
+								<span>
+									<span class="anim-element anim-fade-left" data-index="7" data-duration="1">
+										Mostly sunny
+									</span>
+								</span>
 							</li>
 						</ul>
 					</div>
 				</div>
 				<div class="intro__decor-line"></div>
 			</section>
-			<section class="abous-us section-container section-padding">
-				<div class="abous-us__decor">
+			<section class="abous-us section-container section-padding anim-section" id="about-us-1">
+				<div class="abous-us__decor anim-element anim-fade-in" data-index="5" data-delay="0.5" data-duration="1">
 					<div class="abous-us__decor--element">
 						<picture>
 							<source srcset="img/index/about-us/decor.webp" type="image/webp">
@@ -45,31 +61,31 @@
 					<div class="abous-us__image--icon">
 						<img src="img/index/about-us/icon.svg" width="28" height="28" loading="lazy" alt="">
 					</div>
-					<div class="abous-us__image--body">
+					<div class="abous-us__image--body anim-element anim-clip-down" data-index="1" data-delay="0.2" data-duration="1.2">
 						<picture>
 							<source srcset="img/index/about-us/image.webp" type="image/webp">
 							<img src="img/index/about-us/image.jpg" alt="" loading="lazy" width="562" height="616"
-								class="abous-us__image--img">
+								class="abous-us__image--img anim-scroll-image" data-anchor="#about-us-1">
 						</picture>
 					</div>
 				</div>
 				<div class="abous-us__info">
-					<h2 class="abous-us__title section-title">
+					<h2 class="abous-us__title section-title anim-element anim-fade-up" data-index="2" data-duration="1">
 						Grow your own story...
 					</h2>
-					<div class="abous-us__text">
+					<div class="abous-us__text anim-element anim-fade-up" data-index="3" data-duration="1" data-delay="0.05">
 						Let the clocks stop… and time stand still. Steal away to a picture-perfect Cotswold village and stay at
 						your very own country house retreat, nestled in fairytale gardens. Nourish your spirit with reviving
 						treatments in the hideaway garden spa. Dine on delicious dishes with produce picked from the abundant
 						garden…the magical heart and soul of this special place. Intimate and timeless, Barnsley House feels
 						like a best-kept secret… ripe for a spot of romance, or a celebration you’ll never forget.
 					</div>
-					<a href="#" class="abous-us__link">
+					<a href="#" class="abous-us__link anim-element anim-fade-up" data-index="4" data-duration="1"  data-delay="0.05">
 						Learn more
 					</a>
 				</div>
 			</section>
-			<section class="classicaly section-padding">
+			<section class="classicaly section-padding" id="our-hotel">
 				<div class="classicaly__body section-dark">
 					<div class="classicaly__header section-container _alt">
 						<h2 class="classicaly__title section-title">
@@ -107,8 +123,8 @@
 					</div>
 				</div>
 			</section>
-			<section class="abous-us section-container section-padding">
-				<div class="abous-us__decor">
+			<section class="abous-us section-container section-padding anim-section" id="about-us-2">
+				<div class="abous-us__decor anim-element anim-fade-in" data-index="5" data-delay="0.5" data-duration="1">
 					<div class="abous-us__decor--element _top">
 						<picture>
 							<source srcset="img/index/about-us/decor-2.webp" type="image/webp">
@@ -126,19 +142,19 @@
 					<div class="abous-us__image--icon">
 						<img src="img/index/about-us/icon-2.svg" width="28" height="28" loading="lazy" alt="">
 					</div>
-					<div class="abous-us__image--body">
+					<div class="abous-us__image--body anim-element anim-clip-down" data-index="1" data-delay="0.2" data-duration="1.2">
 						<picture>
 							<source srcset="img/index/about-us/image-2.webp" type="image/webp">
 							<img src="img/index/about-us/image-2.jpg" alt="" loading="lazy" width="562" height="616"
-								class="abous-us__image--img">
+								class="abous-us__image--img anim-scroll-image" data-anchor="#about-us-2">
 						</picture>
 					</div>
 				</div>
 				<div class="abous-us__info">
-					<h2 class="abous-us__title section-title">
+					<h2 class="abous-us__title section-title anim-element anim-fade-up" data-index="2" data-duration="1">
 						Fresh, local, and simply delicious
 					</h2>
-					<div class="abous-us__text">
+					<div class="abous-us__text anim-element anim-fade-up" data-index="3" data-duration="1" data-delay="0.05">
 						Overlooking the glorious gardens and terrace, a table awaits you in 
 						The Potager, where you can enjoy a wonderful meal in a tranquil and unhurried atmosphere. 
 						Just across the road is The Village Pub, our very own Cotswolds country inn, with hearty 
@@ -146,13 +162,13 @@
 						local ingredients and in true garden-to-plate philosophy, many of our vegetables, 
 						salads and herbs are freshly picked from our kitchen garden every morning. 
 					</div>
-					<a href="#" class="abous-us__link">
+					<a href="#" class="abous-us__link anim-element anim-fade-up" data-index="4" data-duration="1"  data-delay="0.05">
 						Learn more
 					</a>
 				</div>
 			</section>
 			<section class="reasons section-padding">
-				<div class="reasons__header section-container">
+				<div class="reasons__header section-container anim-scroll-image" data-anchor=".reasons">
 					<h2 class="reasons__title section-title">
 						Reasons to
 						visit us
@@ -199,8 +215,8 @@
 					</div>
 				</div>
 			</section>
-			<section class="storeys section-padding">
-				<div class="storeys__decor">
+			<section class="storeys section-padding anim-section" id="rooms">
+				<div class="storeys__decor anim-element anim-fade-in" data-index="1" data-delay="0.5" data-duration="1">
 					<div class="storeys__decor--element">
 						<picture>
 							<source srcset="img/index/storey/decor.webp" type="image/webp">
@@ -237,7 +253,7 @@
 					])
 				</ul>
 			</section>
-			<section class="advantages section-padding section-container _alt">
+			<section class="advantages section-padding section-container _alt" id="offers">
 				<ul class="advantages__list">
 					@@loop("html/index/_advantage.html", [
 						{
@@ -264,8 +280,8 @@
 					])
 				</ul>
 			</section>
-			<section class="awards section-padding section-container">
-				<div class="awards__decor">
+			<section class="awards section-padding section-container anim-section">
+				<div class="awards__decor anim-element anim-fade-in" data-index="1" data-delay="0.5" data-duration="1">
 					<div class="awards__decor--element">
 						<picture>
 							<source srcset="img/index/awards/decor.webp" type="image/webp">

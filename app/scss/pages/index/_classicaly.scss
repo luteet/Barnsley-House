@@ -43,6 +43,9 @@
 
     &__slider {
 
+        position: relative;
+        z-index: 100;
+
         margin-top: 65px;
         padding: 0 15px 5px 15px;
         @media (min-width: 675px) {
@@ -101,6 +104,9 @@
             }
 
             align-self: end;
+
+            position: relative;
+            z-index: 100;
         }
 
         // .classicaly__slider--info
@@ -109,7 +115,7 @@
 
             text-align: left;
             position: relative;
-            z-index: 2;
+            z-index: 100;
 
             align-self: flex-end;
 

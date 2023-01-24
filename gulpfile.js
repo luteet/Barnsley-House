@@ -54,6 +54,7 @@ function scriptsLib() {
         'node_modules/swiper/swiper-bundle.min.js', // Slider
         'node_modules/gsap/dist/gsap.min.js', // Animation
         'node_modules/gsap/dist/ScrollTrigger.min.js', // Animation
+        'node_modules/smooth-scrollbar/dist/smooth-scrollbar.js' // Custom scrollbar
     ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())

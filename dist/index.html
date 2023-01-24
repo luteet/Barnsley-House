@@ -11,111 +11,128 @@
 
 <body>
 
-	<header class="header section-container _large">
-		<button class="header__burger" aria-label="Open menu">
-			<span></span>
-			<span></span>
-		</button>
-		<nav class="header__nav">
-			<div class="header__nav--body">
-				<ul class="header__nav--list">
-					<li class="header__nav--item">
-						<a href="#" class="header__nav--link">
-							Our Hotel
-						</a>
-					</li>
-					<li class="header__nav--item">
-						<a href="#" class="header__nav--link">
-							Rooms
-						</a>
-					</li>
-					<li class="header__nav--item">
-						<a href="#" class="header__nav--link">
-							Offers
-						</a>
-					</li>
-					<li class="header__nav--item visible-on-table">
-						<a href="#" class="header__nav--link">
+	<div class="wrapper" data-scrollbar id="main-scrollbar">
+		<header class="header section-container _large anim-section">
+			<button class="header__burger anim-element anim-fade-in" aria-label="Open menu" data-index="1" data-delay="0.3" data-duration="0.7">
+				<span></span>
+				<span></span>
+			</button>
+			<nav class="header__nav">
+				<div class="header__nav--body">
+					<ul class="header__nav--list anim-element anim-childrens-fade-right" data-index="1" data-delay="0.3" data-duration="0.7" data-stagger="0.1" data-childrens-reverse="true">
+						<li class="header__nav--item">
+							<a href="#our-hotel" class="header__nav--link btn-to-scroll">
+								Our Hotel
+							</a>
+						</li>
+						<li class="header__nav--item">
+							<a href="#rooms" class="header__nav--link btn-to-scroll">
+								Rooms
+							</a>
+						</li>
+						<li class="header__nav--item">
+							<a href="#offers" class="header__nav--link btn-to-scroll">
+								Offers
+							</a>
+						</li>
+						<li class="header__nav--item visible-on-table">
+							<a href="#" class="header__nav--link">
+								Contact
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<div class="header__logo">
+				<a href="#" class="header__logo--link">
+					<img src="img/logo.svg" alt="Logo" width="214" height="25" loading="lazy" class="header__logo--img anim-element anim-fade-progress-right" data-index="2" data-duration="1" data-delay="0.3">
+				</a>
+			</div>
+			<div class="header__add hide-on-mob">
+				<ul class="header__add--list anim-element anim-childrens-fade-left" data-index="3" data-delay="0.3" data-duration="0.7" data-stagger="0.1" data-childrens-reverse="true">
+					<li class="header__add--item hide-on-table">
+						<a href="#" class="header__add--link">
 							Contact
+						</a>
+					</li>
+					<li class="header__add--item hide-on-table">
+						<div class="header__add--lang header__lang">
+							<a href="#" class="header__lang--link">
+								FR
+							</a>
+							/
+							<a class="header__lang--link">
+								EN
+							</a>
+						</div>
+					</li>
+					<li class="header__add--item">
+						<a href="#" class="header__add--link">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M1.93163 4.14258H16.2825C16.6787 4.14258 17 4.47473 17 4.88461V16.7578C17 17.1676 16.6787 17.4999 16.2825 17.4999H1.93163C1.5354 17.4999 1.21411 17.1676 1.21411 16.7578V4.88461C1.21411 4.47473 1.5354 4.14258 1.93163 4.14258Z"
+									stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+								<path
+									d="M12.143 4.14293C12.143 3.17674 11.8232 2.25019 11.2539 1.56694C10.6846 0.883784 9.91237 0.5 9.10729 0.5C8.30211 0.5 7.53 0.883784 6.96068 1.56694C6.39137 2.25019 6.07147 3.17674 6.07147 4.14293"
+									stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
 						</a>
 					</li>
 				</ul>
 			</div>
-		</nav>
-		<div class="header__logo">
-			<a href="#" class="header__logo--link">
-				<img src="img/logo.svg" alt="Logo" width="214" height="25" loading="lazy" class="header__logo--img">
-			</a>
-		</div>
-		<div class="header__add hide-on-mob">
-			<ul class="header__add--list">
-				<li class="header__add--item hide-on-table">
-					<a href="#" class="header__add--link">
-						Contact
-					</a>
-				</li>
-				<li class="header__add--item hide-on-table">
-					<div class="header__add--lang header__lang">
-						<a href="#" class="header__lang--link">
-							FR
-						</a>
-						/
-						<a class="header__lang--link">
-							EN
-						</a>
-					</div>
-				</li>
-				<li class="header__add--item">
-					<a href="#" class="header__add--link">
-						<svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-							xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M1.93163 4.14258H16.2825C16.6787 4.14258 17 4.47473 17 4.88461V16.7578C17 17.1676 16.6787 17.4999 16.2825 17.4999H1.93163C1.5354 17.4999 1.21411 17.1676 1.21411 16.7578V4.88461C1.21411 4.47473 1.5354 4.14258 1.93163 4.14258Z"
-								stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-							<path
-								d="M12.143 4.14293C12.143 3.17674 11.8232 2.25019 11.2539 1.56694C10.6846 0.883784 9.91237 0.5 9.10729 0.5C8.30211 0.5 7.53 0.883784 6.96068 1.56694C6.39137 2.25019 6.07147 3.17674 6.07147 4.14293"
-								stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-						</svg>
-					</a>
-				</li>
-			</ul>
-		</div>
-	</header>
+		</header>
 
 		<main class="main section-padding-bottom">
-			<section class="intro section-container section-margin-bottom">
-				<div class="intro__bg">
+			<section class="intro section-container section-margin-bottom anim-section">
+				<div class="intro__bg anim-element anim-zoom-out" data-index="1" data-delay="0.2" data-duration="2">
 					<div class="intro__bg--image">
 						<picture>
 							<source srcset="img/index/intro/image.webp" type="image/webp">
 							<img src="img/index/intro/image.jpg" alt="" width="0" height="0" loading="lazy"
-								class="intro__bg--img">
+								class="intro__bg--img anim-scroll-image" data-pos="to-bottom" data-anchor=".intro">
 						</picture>
 					</div>
 				</div>
 				<div class="intro__content">
-					<h1 class="intro__title main-title">
-						Welcome to
-						barnsley house
+					<h1 class="intro__title main-title anim-element anim-text" data-index="2" data-delay="0" data-duration="1" data-stagger="0.2">
+						<span class="anim-text-line">
+							<span>Welcome to</span>
+						</span>
+						<span class="anim-text-line">
+							<span>barnsley house</span>
+						</span>
 					</h1>
 					<div class="intro__info">
-						<ul class="intro__info--list">
+						<ul class="intro__info--list anim-element anim-fade-in" data-index="4" data-duration="1">
 							<li class="intro__info--item">
-								17:05
+								<span>
+									<span class="anim-element anim-fade-right" data-index="5" data-duration="1">
+										17:05
+									</span>
+								</span>
 							</li>
 							<li class="intro__info--item">
-								31 °C
+								<span>
+									<span class="anim-element anim-zoom-in" data-index="6" data-duration="1">
+										31 °C
+									</span>
+								</span>
 							</li>
 							<li class="intro__info--item">
-								Mostly sunny
+								<span>
+									<span class="anim-element anim-fade-left" data-index="7" data-duration="1">
+										Mostly sunny
+									</span>
+								</span>
 							</li>
 						</ul>
 					</div>
 				</div>
 				<div class="intro__decor-line"></div>
 			</section>
-			<section class="abous-us section-container section-padding">
-				<div class="abous-us__decor">
+			<section class="abous-us section-container section-padding anim-section" id="about-us-1">
+				<div class="abous-us__decor anim-element anim-fade-in" data-index="5" data-delay="0.5" data-duration="1">
 					<div class="abous-us__decor--element">
 						<picture>
 							<source srcset="img/index/about-us/decor.webp" type="image/webp">
@@ -127,31 +144,31 @@
 					<div class="abous-us__image--icon">
 						<img src="img/index/about-us/icon.svg" width="28" height="28" loading="lazy" alt="">
 					</div>
-					<div class="abous-us__image--body">
+					<div class="abous-us__image--body anim-element anim-clip-down" data-index="1" data-delay="0.2" data-duration="1.2">
 						<picture>
 							<source srcset="img/index/about-us/image.webp" type="image/webp">
 							<img src="img/index/about-us/image.jpg" alt="" loading="lazy" width="562" height="616"
-								class="abous-us__image--img">
+								class="abous-us__image--img anim-scroll-image" data-anchor="#about-us-1">
 						</picture>
 					</div>
 				</div>
 				<div class="abous-us__info">
-					<h2 class="abous-us__title section-title">
+					<h2 class="abous-us__title section-title anim-element anim-fade-up" data-index="2" data-duration="1">
 						Grow your own story...
 					</h2>
-					<div class="abous-us__text">
+					<div class="abous-us__text anim-element anim-fade-up" data-index="3" data-duration="1" data-delay="0.05">
 						Let the clocks stop… and time stand still. Steal away to a picture-perfect Cotswold village and stay at
 						your very own country house retreat, nestled in fairytale gardens. Nourish your spirit with reviving
 						treatments in the hideaway garden spa. Dine on delicious dishes with produce picked from the abundant
 						garden…the magical heart and soul of this special place. Intimate and timeless, Barnsley House feels
 						like a best-kept secret… ripe for a spot of romance, or a celebration you’ll never forget.
 					</div>
-					<a href="#" class="abous-us__link">
+					<a href="#" class="abous-us__link anim-element anim-fade-up" data-index="4" data-duration="1"  data-delay="0.05">
 						Learn more
 					</a>
 				</div>
 			</section>
-			<section class="classicaly section-padding">
+			<section class="classicaly section-padding" id="our-hotel">
 				<div class="classicaly__body section-dark">
 					<div class="classicaly__header section-container _alt">
 						<h2 class="classicaly__title section-title">
@@ -170,7 +187,7 @@
             <div class="classicaly__slide--image-body">
                 <picture>
                     <source srcset="img/index/classicaly/slide-1.webp" type="image/webp">
-                    <img src="img/index/classicaly/slide-1.jpg" alt="" width="1180" height="438" loading="lazy" class="classicaly__slide--img">
+                    <img src="img/index/classicaly/slide-1.jpg" alt="" width="1180" height="438" loading="lazy" class="classicaly__slide--img anim-scroll-image" data-anchor=".classicaly">
                 </picture>
             </div>
         </div>
@@ -181,7 +198,7 @@
             <div class="classicaly__slide--image-body">
                 <picture>
                     <source srcset="img/index/classicaly/slide-2.webp" type="image/webp">
-                    <img src="img/index/classicaly/slide-2.jpg" alt="" width="1180" height="438" loading="lazy" class="classicaly__slide--img">
+                    <img src="img/index/classicaly/slide-2.jpg" alt="" width="1180" height="438" loading="lazy" class="classicaly__slide--img anim-scroll-image" data-anchor=".classicaly">
                 </picture>
             </div>
         </div>
@@ -192,7 +209,7 @@
             <div class="classicaly__slide--image-body">
                 <picture>
                     <source srcset="img/index/classicaly/slide-3.webp" type="image/webp">
-                    <img src="img/index/classicaly/slide-3.jpg" alt="" width="1180" height="438" loading="lazy" class="classicaly__slide--img">
+                    <img src="img/index/classicaly/slide-3.jpg" alt="" width="1180" height="438" loading="lazy" class="classicaly__slide--img anim-scroll-image" data-anchor=".classicaly">
                 </picture>
             </div>
         </div>
@@ -212,8 +229,8 @@
 					</div>
 				</div>
 			</section>
-			<section class="abous-us section-container section-padding">
-				<div class="abous-us__decor">
+			<section class="abous-us section-container section-padding anim-section" id="about-us-2">
+				<div class="abous-us__decor anim-element anim-fade-in" data-index="5" data-delay="0.5" data-duration="1">
 					<div class="abous-us__decor--element _top">
 						<picture>
 							<source srcset="img/index/about-us/decor-2.webp" type="image/webp">
@@ -231,19 +248,19 @@
 					<div class="abous-us__image--icon">
 						<img src="img/index/about-us/icon-2.svg" width="28" height="28" loading="lazy" alt="">
 					</div>
-					<div class="abous-us__image--body">
+					<div class="abous-us__image--body anim-element anim-clip-down" data-index="1" data-delay="0.2" data-duration="1.2">
 						<picture>
 							<source srcset="img/index/about-us/image-2.webp" type="image/webp">
 							<img src="img/index/about-us/image-2.jpg" alt="" loading="lazy" width="562" height="616"
-								class="abous-us__image--img">
+								class="abous-us__image--img anim-scroll-image" data-anchor="#about-us-2">
 						</picture>
 					</div>
 				</div>
 				<div class="abous-us__info">
-					<h2 class="abous-us__title section-title">
+					<h2 class="abous-us__title section-title anim-element anim-fade-up" data-index="2" data-duration="1">
 						Fresh, local, and simply delicious
 					</h2>
-					<div class="abous-us__text">
+					<div class="abous-us__text anim-element anim-fade-up" data-index="3" data-duration="1" data-delay="0.05">
 						Overlooking the glorious gardens and terrace, a table awaits you in 
 						The Potager, where you can enjoy a wonderful meal in a tranquil and unhurried atmosphere. 
 						Just across the road is The Village Pub, our very own Cotswolds country inn, with hearty 
@@ -251,13 +268,13 @@
 						local ingredients and in true garden-to-plate philosophy, many of our vegetables, 
 						salads and herbs are freshly picked from our kitchen garden every morning. 
 					</div>
-					<a href="#" class="abous-us__link">
+					<a href="#" class="abous-us__link anim-element anim-fade-up" data-index="4" data-duration="1"  data-delay="0.05">
 						Learn more
 					</a>
 				</div>
 			</section>
 			<section class="reasons section-padding">
-				<div class="reasons__header section-container">
+				<div class="reasons__header section-container anim-scroll-image" data-anchor=".reasons">
 					<h2 class="reasons__title section-title">
 						Reasons to
 						visit us
@@ -343,8 +360,8 @@
 					</div>
 				</div>
 			</section>
-			<section class="storeys section-padding">
-				<div class="storeys__decor">
+			<section class="storeys section-padding anim-section" id="rooms">
+				<div class="storeys__decor anim-element anim-fade-in" data-index="1" data-delay="0.5" data-duration="1">
 					<div class="storeys__decor--element">
 						<picture>
 							<source srcset="img/index/storey/decor.webp" type="image/webp">
@@ -440,73 +457,79 @@
 </li>
 				</ul>
 			</section>
-			<section class="advantages section-padding section-container _alt">
+			<section class="advantages section-padding section-container _alt" id="offers">
 				<ul class="advantages__list">
-					<li class="advantages__item">
-    <div class="advantages__item--image">
-        <a href="#" class="advantages__item--image-body _right">
-            <picture>
-                <source srcset="img/index/advantage/image-1.webp" type="image/webp">
-                <img src="img/index/advantage/image-1.jpg" alt="" width="516" height="527" loading="lazy">
-            </picture>
-        </a>
-    </div>
-    <div class="advantages__item--info">
-        <h2 class="advantages__item--title section-title">
-            Retreat
-        </h2>
-        <div class="advantages__item--text">
-            Barnsley Spa is a tranquil sanctuary for ultimate relaxation offering a range of indulgent treatments and therapies - tucked away in a corner of our beautiful gardens, it's available for our guests to enjoy for a blissful amount of relaxation and me time during an overnight stay at Barnsley House.
+					<li class="advantages__item anim-section">
+    <div class="advantages__item--body anim-element anim-fade-up" data-index="1" data-duration="1">
+        <div class="advantages__item--image">
+            <a href="#" class="advantages__item--image-body _right">
+                <picture>
+                    <source srcset="img/index/advantage/image-1.webp" type="image/webp">
+                    <img src="img/index/advantage/image-1.jpg" alt="" width="516" height="527" loading="lazy">
+                </picture>
+            </a>
         </div>
-        <a href="#" class="advantages__item--link">
-            Learn More
-        </a>
-    </div>
-</li><li class="advantages__item _reverse">
-    <div class="advantages__item--image">
-        <a href="#" class="advantages__item--image-body">
-            <picture>
-                <source srcset="img/index/advantage/image-2.webp" type="image/webp">
-                <img src="img/index/advantage/image-2.jpg" alt="" width="516" height="527" loading="lazy">
-            </picture>
-        </a>
-    </div>
-    <div class="advantages__item--info">
-        <h2 class="advantages__item--title section-title">
-            Awaken
-        </h2>
-        <div class="advantages__item--text">
-            A secret hideaway enveloped by gorgeous gardens, the spa is designed to help you recharge, revive and feel heavenly from head-to-toe. We believe in the power of nature which is why you'll find natural and botanical elements from the garden all around the spa… indoor plants, tables crafted from tree trunks and lavender placed on treatment beds. The spa lounge boasts simply enchanting views of the surrounding countryside… so relaxation begins as soon as you enter.
+        <div class="advantages__item--info">
+            <h2 class="advantages__item--title section-title">
+                Retreat
+            </h2>
+            <div class="advantages__item--text">
+                Barnsley Spa is a tranquil sanctuary for ultimate relaxation offering a range of indulgent treatments and therapies - tucked away in a corner of our beautiful gardens, it's available for our guests to enjoy for a blissful amount of relaxation and me time during an overnight stay at Barnsley House.
+            </div>
+            <a href="#" class="advantages__item--link">
+                Learn More
+            </a>
         </div>
-        <a href="#" class="advantages__item--link">
-            Learn More
-        </a>
     </div>
-</li><li class="advantages__item">
-    <div class="advantages__item--image">
-        <a href="#" class="advantages__item--image-body">
-            <picture>
-                <source srcset="img/index/advantage/image-3.webp" type="image/webp">
-                <img src="img/index/advantage/image-3.jpg" alt="" width="516" height="527" loading="lazy">
-            </picture>
-        </a>
-    </div>
-    <div class="advantages__item--info">
-        <h2 class="advantages__item--title section-title">
-            Weddings
-        </h2>
-        <div class="advantages__item--text">
-            Say 'I do' in the beautiful surroundings of our gardens, feast on your favourite dishes with a custom menu created for you by our Head Chef… and party till the small hours with your loved ones. And with all the hidden nooks in the gardens and house, there’s no shortage of stunning backdrops for your photos… official and unofficial!
+</li><li class="advantages__item anim-section _reverse">
+    <div class="advantages__item--body anim-element anim-fade-up" data-index="1" data-duration="1">
+        <div class="advantages__item--image">
+            <a href="#" class="advantages__item--image-body">
+                <picture>
+                    <source srcset="img/index/advantage/image-2.webp" type="image/webp">
+                    <img src="img/index/advantage/image-2.jpg" alt="" width="516" height="527" loading="lazy">
+                </picture>
+            </a>
         </div>
-        <a href="#" class="advantages__item--link">
-            Learn More
-        </a>
+        <div class="advantages__item--info">
+            <h2 class="advantages__item--title section-title">
+                Awaken
+            </h2>
+            <div class="advantages__item--text">
+                A secret hideaway enveloped by gorgeous gardens, the spa is designed to help you recharge, revive and feel heavenly from head-to-toe. We believe in the power of nature which is why you'll find natural and botanical elements from the garden all around the spa… indoor plants, tables crafted from tree trunks and lavender placed on treatment beds. The spa lounge boasts simply enchanting views of the surrounding countryside… so relaxation begins as soon as you enter.
+            </div>
+            <a href="#" class="advantages__item--link">
+                Learn More
+            </a>
+        </div>
+    </div>
+</li><li class="advantages__item anim-section">
+    <div class="advantages__item--body anim-element anim-fade-up" data-index="1" data-duration="1">
+        <div class="advantages__item--image">
+            <a href="#" class="advantages__item--image-body">
+                <picture>
+                    <source srcset="img/index/advantage/image-3.webp" type="image/webp">
+                    <img src="img/index/advantage/image-3.jpg" alt="" width="516" height="527" loading="lazy">
+                </picture>
+            </a>
+        </div>
+        <div class="advantages__item--info">
+            <h2 class="advantages__item--title section-title">
+                Weddings
+            </h2>
+            <div class="advantages__item--text">
+                Say 'I do' in the beautiful surroundings of our gardens, feast on your favourite dishes with a custom menu created for you by our Head Chef… and party till the small hours with your loved ones. And with all the hidden nooks in the gardens and house, there’s no shortage of stunning backdrops for your photos… official and unofficial!
+            </div>
+            <a href="#" class="advantages__item--link">
+                Learn More
+            </a>
+        </div>
     </div>
 </li>
 				</ul>
 			</section>
-			<section class="awards section-padding section-container">
-				<div class="awards__decor">
+			<section class="awards section-padding section-container anim-section">
+				<div class="awards__decor anim-element anim-fade-in" data-index="1" data-delay="0.5" data-duration="1">
 					<div class="awards__decor--element">
 						<picture>
 							<source srcset="img/index/awards/decor.webp" type="image/webp">
@@ -567,25 +590,25 @@
 			</section>
 		</main>
 
-	<footer class="footer section-container">
-		<div class="footer__bg">
-			<div class="footer__bg--wrapper">
-				<picture>
-					<source srcset="img/footer/image.webp" media="(min-width: 855px)" type="image/webp">
-					<source srcset="img/footer/image-mob.webp" type="image/webp">
-					<img src="img/footer/image.jpg" alt="" width="0" height="0" loading="lazy" class="footer__bg--img">
-				</picture>
-			</div>
-		</div>
-		<div class="footer__icon">
-			<img src="img/footer/icon.svg" width="26" height="26" loading="lazy" alt="">
-		</div>
-		<h2 class="footer__title section-title">
-			Gift experiences for every occasion
-		</h2>
-		<div class="footer__slider swiper">
-			<div class="footer__slider--wrapper swiper-wrapper">
-				<div class="footer__slider--slide footer__slide swiper-slide">
+			<footer class="footer section-container">
+				<div class="footer__bg">
+					<div class="footer__bg--wrapper">
+						<picture>
+							<source srcset="img/footer/image.webp" media="(min-width: 855px)" type="image/webp">
+							<source srcset="img/footer/image-mob.webp" type="image/webp">
+							<img src="img/footer/image.jpg" alt="" width="0" height="0" loading="lazy" class="footer__bg--img anim-scroll-image" data-anchor=".footer">
+						</picture>
+					</div>
+				</div>
+				<div class="footer__icon">
+					<img src="img/footer/icon.svg" width="26" height="26" loading="lazy" alt="">
+				</div>
+				<h2 class="footer__title section-title">
+					Gift experiences for every occasion
+				</h2>
+				<div class="footer__slider swiper">
+					<div class="footer__slider--wrapper swiper-wrapper">
+						<div class="footer__slider--slide footer__slide swiper-slide">
     <div class="footer__slide--body">
         <h3 class="footer__slide--title">
             Spa Retreat for two
@@ -646,9 +669,11 @@
         </a>
     </div>
 </div>
-			</div>
+					</div>
+				</div>
+			</footer>
+
 		</div>
-	</footer>
 
 	<script src="js/libs.min.js"></script>
 	<script src="js/main.min.js"></script>

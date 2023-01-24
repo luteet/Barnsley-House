@@ -22,15 +22,39 @@ body.addEventListener('click', function (event) {
 
 		// =-=-=-=-=-=-=-=-=-=- </open menu in header> -=-=-=-=-=-=-=-=-=-=-
 
+
+		// =-=-=-=-=-=-=-=-=-=-=-=- <scroll on click to section> -=-=-=-=-=-=-=-=-=-=-=-=
+
+		let btnToScroll = $('.btn-to-scroll');
+		if(btnToScroll) {
+			event.preventDefault();
+			let section;
+		
+			section = document.querySelector(btnToScroll.getAttribute('href'))
+		
+			menu.forEach(elem => {
+				elem.classList.remove('_active')
+			})
+		
+			bodyScrollBar.scrollTo(0,section.offsetTop,section.offsetTop / 1.5);
+		
+		}
+		
+		// =-=-=-=-=-=-=-=-=-=-=-=- </scroll on click to section> -=-=-=-=-=-=-=-=-=-=-=-=
+
 })
 
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <resize> -=-=-=-=-=-=-=-=-=-=-=-=
 
+let windowSize;
+
 function resize() {
 
-html.style.setProperty("--height-screen", window.innerHeight + "px")
-html.style.setProperty("--height-header", header.offsetHeight + "px")
+	windowSize = window.innerWidth;
+
+	html.style.setProperty("--height-screen", window.innerHeight + "px")
+	html.style.setProperty("--height-header", header.offsetHeight + "px")
 
 }
 
@@ -156,13 +180,350 @@ storeysItem.forEach(storeysItem => {
 	delete storeysItem.dataset.image;
 })
 
+var scrollPositionX = 0;
+var scrollPositionY = 0;
+
+
+
+
+// =-=-=-=-=-=-=-=-=-=-=-=- <Animation> -=-=-=-=-=-=-=-=-=-=-=-=
+
+gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(TimelineMax)
+
+let tl = gsap.timeline();
+const animSection = document.querySelectorAll('.anim-section');
+let animSectionArray = [];
+
+function sortByIndex(arr) {
+	if(windowSize < 980) return arr.sort((a, b) => a.mobIndex > b.mobIndex ? 1 : -1); else return arr.sort((a, b) => a.index > b.index ? 1 : -1);
+}
+
+animSection.forEach(animSection => {
+	
+	const animElement = animSection.querySelectorAll('.anim-element');
+
+	let animArray = [];
+	animElement.forEach(animElement => {
+		const index = Number(animElement.dataset.index),
+			  mobIndex = (Number(animElement.dataset.mobIndex)) ? Number(animElement.dataset.mobIndex) : index;
+			  
+		animArray.push({element: animElement, index: index, mobIndex: mobIndex});
+	})
+
+	animArray = sortByIndex(animArray);
+
+	let tl = new TimelineMax();
+	tl.pause();
+	
+
+	Array.from(animArray).forEach((animArrayElement, index) => {
+
+		const duration 	= (Number(animArrayElement['element'].dataset.duration)) ? Number(animArrayElement['element'].dataset.duration) : 0.5,
+			  delay 	= (Number(animArrayElement['element'].dataset.delay)) ? Number(animArrayElement['element'].dataset.delay) : 0,
+			  stagger 	= (Number(animArrayElement['element'].dataset.stagger)) ? Number(animArrayElement['element'].dataset.stagger) : 0.05,
+			  childrensReverse 	= (animArrayElement['element'].dataset.childrensReverse == "true") ? true : false;
+		
+		if(animArrayElement['element'].classList.contains('anim-text')) {
+
+			tl.to(animArrayElement['element'], {
+				//opacity: 1,
+				duration: duration,
+				delay: delay,
+				onStart: function() {
+					
+					gsap.to(animArrayElement['element'].querySelectorAll('.anim-text-line > span'), {
+						y: 0,
+						//opacity: 1,
+						startAt: {
+							y: '100%',
+							
+						},
+						ease:"power2.out",
+						duration: duration,
+						//ease: "back.inOut(1.7)",
+						stagger: stagger,
+						
+					})
+				}
+			}, (index == 0) ? false : "-=1")
+
+		} else if(animArrayElement['element'].classList.contains('anim-fade-in')) {
+
+			tl.to(animArrayElement['element'], {
+				opacity: 1,
+				duration: duration,
+				delay: delay,
+			}, (index == 0) ? false : "-=1");
+
+		} else if(animArrayElement['element'].classList.contains('anim-fade-up')) {
+			
+			tl.to(animArrayElement['element'], {
+				opacity: 1,
+				transform: 'translate3d(0,0,0)',
+				startAt: {
+					transform: 'translate3d(0,25px,0)',
+				},
+				duration: duration,
+				delay: delay,
+				onStart: function () {
+					animArrayElement['element'].classList.add('_animated');
+				}
+			}, (index == 0) ? false : "-=1");
+
+		} else if(animArrayElement['element'].classList.contains('anim-zoom-bottom')) {
+			
+			tl.to(animArrayElement['element'], {
+				opacity: 1,
+				y: 0,
+				scale: 1,
+				startAt: {
+					y: -100,
+					scale: 0.9
+				},
+				duration: duration,
+				delay: delay,
+			}, (index == 0) ? false : "-=1");
+
+		} else if(animArrayElement['element'].classList.contains('anim-fade-right')) {
+			
+			tl.to(animArrayElement['element'], {
+				opacity: 1,
+				transform: 'translate3d(0,0,0)',
+				startAt: {
+					transform: 'translate3d(-100px,0,0)',
+				},
+				duration: duration,
+				delay: delay,
+			}, (index == 0) ? false : "-=1");
+
+		} else if(animArrayElement['element'].classList.contains('anim-fade-left')) {
+			
+			tl.to(animArrayElement['element'], {
+				opacity: 1,
+				transform: 'translate3d(0,0,0)',
+				startAt: {
+					transform: 'translate3d(100px,0,0)',
+				},
+				duration: duration,
+				delay: delay,
+			}, (index == 0) ? false : "-=1");
+
+		} else if(animArrayElement['element'].classList.contains('anim-zoom-out')) {
+			tl.to(animArrayElement['element'], {
+				opacity: 1,
+				transform: 'scale3d(1,1,1)',
+				startAt: {
+					transform: 'scale3d(1.1,1.1,1)',
+					opacity: 0,
+				},
+				duration: duration,
+				ease: "power2.out",
+				delay: delay,
+			}, (index == 0) ? false : "-=1");
+		} else if(animArrayElement['element'].classList.contains('anim-childrens-fade-right')) {
+
+			tl.to(animArrayElement['element'], {
+				opacity: 1,
+				duration: duration,
+				delay: delay,
+				onStart: function() {
+					
+					let childrens = Array.from(animArrayElement['element'].children);
+
+					if(childrensReverse) childrens = childrens.reverse();
+
+					gsap.to(childrens, {
+						transform: 'translate3d(0,0,0)',
+						opacity: 1,
+						startAt: {
+							transform: 'translate3d(-20px,0,0)',
+							opacity: 0,
+						},
+						duration: duration,
+						stagger: stagger,
+						
+					})
+				}
+			}, (index == 0) ? false : "-=1")
+
+		} else if(animArrayElement['element'].classList.contains('anim-fade-progress-right')) {
+
+			tl.to(animArrayElement['element'], {
+				opacity: 1,
+				maskImage: 'linear-gradient(90deg, rgba(72,172,240,1) 100%, transparent 105%)',
+				startAt: {
+					maskImage: 'linear-gradient(90deg, rgba(72,172,240,1) -5%, transparent 0%)',
+				},
+				duration: duration,
+				delay: delay,
+			}, (index == 0) ? false : "-=1")
+
+			/* tl.to(animArrayElement['element'], {
+				opacity: 1,
+				duration: duration,
+				delay: delay,
+			}, (index == 0) ? false : "-=1") */
+		} else if(animArrayElement['element'].classList.contains('anim-childrens-fade-left')) {
+
+			tl.to(animArrayElement['element'], {
+				opacity: 1,
+				duration: duration,
+				delay: delay,
+				onStart: function() {
+					
+					let childrens = Array.from(animArrayElement['element'].children);
+
+					if(childrensReverse) childrens = childrens.reverse();
+
+					gsap.to(childrens, {
+						transform: 'translate3d(0,0,0)',
+						opacity: 1,
+						startAt: {
+							transform: 'translate3d(20px,0,0)',
+							opacity: 0,
+						},
+						duration: duration,
+						stagger: stagger,
+						
+					})
+				}
+			}, (index == 0) ? false : "-=1")
+
+		} else if(animArrayElement['element'].classList.contains('anim-zoom-in')) {
+
+			tl.to(animArrayElement['element'], {
+				opacity: 1,
+				transform: 'scale3d(1,1,1)',
+				startAt: {
+					transform: 'scale3d(0.7,0.7,1)',
+				},
+				duration: duration,
+				delay: delay,
+				
+			}, (index == 0) ? false : "-=1")
+
+		} else if(animArrayElement['element'].classList.contains('anim-clip-down')) {
+			tl.to(animArrayElement['element'], {
+				opacity: 1,
+				clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+				startAt: {
+					clipPath: 'polygon(0 0, 100% 0, 100% 0%, 0 0%)',
+					opacity: 1,
+				},
+				ease: "power2.out",
+				duration: duration,
+				delay: delay,
+			}, (index == 0) ? false : "-=1");
+		}
+
+	})	
+
+	animSection.style.opacity = 1;
+	animSectionArray.push([animSection, tl]);
+
+})
+
+//gsap.fromTo()
+
+function animScroll() {
+
+	//console.log('scroll')
+
+	Array.from(animSectionArray).forEach((animArrayElement, index) => {
+		const element = animArrayElement[0],
+			  offset = (Number(animArrayElement[0].dataset.offset)) ? Number(animArrayElement[0].dataset.offset) : 0;
+			  elementCoords = element.getBoundingClientRect();
+		
+		if(window.innerHeight / 1.5 - offset > elementCoords.top && !element.classList.contains('_animated')) {
+			element.classList.add('_animated')
+			animArrayElement[1].play();
+		}
+	})
+}
+
+const scrollImages = document.querySelectorAll('.anim-scroll-image');
+
+/* scrollImages.forEach(scrollImage => {
+	gsap.to(scrollImage, {
+		transform: 'translate3d(0,50px,0)',
+		startAt: {
+			transform: 'translate3d(0,0,0)',
+		},
+		scrollTrigger: {
+			trigger: scrollImage,
+			
+			scrub: true,
+			start: "top",
+			end: "bottom",
+		}
+	})
+}) */
+
+/* window.onload = function () {
+	animScroll();
+} */
+
+animScroll()
+
+function smoothScrollbarInit() {
+  
+	var bodyScroll = document.getElementById("main-scrollbar");
+  
+	bodyScrollBar = Scrollbar.init(bodyScroll, {
+		damping: 0.05,
+		// renderByPixels: !('ontouchstart' in document),
+		delegateTo: document,
+	});
+	
+	  bodyScrollBar.addListener(({ offset }) => {  
+  
+		scrollPositionX = offset.x;
+		scrollPositionY = offset.y;
+  
+		scrollImages.forEach(scrollImage => {
+		  
+		  if(scrollImage.dataset.pos == "to-bottom") {
+  
+			  if(document.querySelector(scrollImage.dataset.anchor).offsetTop > scrollPositionY - (window.innerHeight)) {
+				  scrollImage.style.transform = `translate3d(0,${offset.y / 7}px,0)`;
+			  }
+			  
+		  } else if(scrollImage.dataset.pos == "to-top") {
+  
+			  /* if(scrollImage.closest('section').offsetTop > scrollPositionY - (window.innerHeight / 2)) {
+				  scrollImage.style.transform = `translate3d(0,${(scrollImage.closest('section').offsetTop - offset.y) / 20}px,0)`;
+			  } */
+  
+		  } else {
+			  
+			  if(document.querySelector(scrollImage.dataset.anchor).offsetTop > scrollPositionY - (window.innerHeight / 2)) {
+				  let result = (document.querySelector(scrollImage.dataset.anchor).offsetTop - offset.y) / 30;
+				  if(result >= 25) result = 25; else if(result <= -25) result = -25;
+  
+				  scrollImage.style.transform = `translate3d(0,${result}px,0)`;
+			  }
+		  }
+		  
+		})
+
+		animScroll()
+  
+	});
+	
+  }
+  
+  
+  
+  smoothScrollbarInit();
+  bodyScrollBar.setPosition(0, 0);
+  bodyScrollBar.track.xAxis.element.remove();
+//document.querySelector('[data-scrollbar]').addEventListener('scroll', animScroll)
+
+// =-=-=-=-=-=-=-=-=-=-=-=- </Animation> -=-=-=-=-=-=-=-=-=-=-=-=
 /* 
-// =-=-=-=-=-=-=-=-=-=-=-=- <Анимации> -=-=-=-=-=-=-=-=-=-=-=-=
-
-AOS.init({
-	//disable: "mobile",
-});
-
-// =-=-=-=-=-=-=-=-=-=-=-=- </Анимации> -=-=-=-=-=-=-=-=-=-=-=-=
-
-*/
+ScrollSmoother.create({
+	smooth: 1,               // how long (in seconds) it takes to "catch up" to the native scroll position
+	effects: true,           // looks for data-speed and data-lag attributes on elements
+	smoothTouch: 0.1,        // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+}); */

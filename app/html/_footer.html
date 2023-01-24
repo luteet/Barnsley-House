@@ -1,46 +1,48 @@
-	<footer class="footer section-container">
-		<div class="footer__bg">
-			<div class="footer__bg--wrapper">
-				<picture>
-					<source srcset="img/footer/image.webp" media="(min-width: 855px)" type="image/webp">
-					<source srcset="img/footer/image-mob.webp" type="image/webp">
-					<img src="img/footer/image.jpg" alt="" width="0" height="0" loading="lazy" class="footer__bg--img">
-				</picture>
-			</div>
+			<footer class="footer section-container">
+				<div class="footer__bg">
+					<div class="footer__bg--wrapper">
+						<picture>
+							<source srcset="img/footer/image.webp" media="(min-width: 855px)" type="image/webp">
+							<source srcset="img/footer/image-mob.webp" type="image/webp">
+							<img src="img/footer/image.jpg" alt="" width="0" height="0" loading="lazy" class="footer__bg--img anim-scroll-image" data-anchor=".footer">
+						</picture>
+					</div>
+				</div>
+				<div class="footer__icon">
+					<img src="img/footer/icon.svg" width="26" height="26" loading="lazy" alt="">
+				</div>
+				<h2 class="footer__title section-title">
+					Gift experiences for every occasion
+				</h2>
+				<div class="footer__slider swiper">
+					<div class="footer__slider--wrapper swiper-wrapper">
+						@@loop("footer/_slide.html", [
+							{
+								"title": "Spa Retreat for two",
+								"text": "Introducing Barnsley's new dual treatment package. We are now offering a dual treatment package for...",
+							},
+							{
+								"title": "Afternoon Tea",
+								"text": "Enjoy a delicious afternoon tea in one of our cosy lounges or in our beautiful gardens.",
+							},
+							{
+								"title": "Tea & Talks",
+								"text": '10th August; from 11:30am Come and join us for our Summer "Tea & Talks" event. Enjoy classic afternoon',
+							},
+							{
+								"title": "Spa Retreat for two",
+								"text": "Introducing Barnsley's new dual treatment package. We are now offering a dual treatment package for...",
+							},
+							{
+								"title": "Afternoon Tea",
+								"text": "Enjoy a delicious afternoon tea in one of our cosy lounges or in our beautiful gardens.",
+							},
+						])
+					</div>
+				</div>
+			</footer>
+
 		</div>
-		<div class="footer__icon">
-			<img src="img/footer/icon.svg" width="26" height="26" loading="lazy" alt="">
-		</div>
-		<h2 class="footer__title section-title">
-			Gift experiences for every occasion
-		</h2>
-		<div class="footer__slider swiper">
-			<div class="footer__slider--wrapper swiper-wrapper">
-				@@loop("footer/_slide.html", [
-					{
-						"title": "Spa Retreat for two",
-						"text": "Introducing Barnsley's new dual treatment package. We are now offering a dual treatment package for...",
-					},
-					{
-						"title": "Afternoon Tea",
-						"text": "Enjoy a delicious afternoon tea in one of our cosy lounges or in our beautiful gardens.",
-					},
-					{
-						"title": "Tea & Talks",
-						"text": '10th August; from 11:30am Come and join us for our Summer "Tea & Talks" event. Enjoy classic afternoon',
-					},
-					{
-						"title": "Spa Retreat for two",
-						"text": "Introducing Barnsley's new dual treatment package. We are now offering a dual treatment package for...",
-					},
-					{
-						"title": "Afternoon Tea",
-						"text": "Enjoy a delicious afternoon tea in one of our cosy lounges or in our beautiful gardens.",
-					},
-				])
-			</div>
-		</div>
-	</footer>
 
 	<script src="js/libs.min.js"></script>
 	<script src="js/main.min.js"></script>

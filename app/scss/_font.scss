@@ -3,7 +3,7 @@
     font-family: var(--title-font);
     font-weight: 700;
     font-size: 4.875rem;
-    line-height: 110%;
+    line-height: 80%;
     letter-spacing: -0.015em;
     text-transform: uppercase;
 
@@ -13,7 +13,7 @@
 
     @media (min-width: 675px) {
         font-size: 3.9375rem;
-        line-height: 99%;
+        //line-height: 99%;
     }
 
     @media (min-width: 1015px) {
