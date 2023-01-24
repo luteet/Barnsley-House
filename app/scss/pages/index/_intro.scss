@@ -91,7 +91,10 @@
 		// .intro__info--item
 
 		&--item {
-			padding: 0px 25.25px;
+			padding: 0px 15px;
+			@media (min-width: 370px) {
+				padding: 0px 25.25px;
+			}
 
 			font-size: 0.875rem;
 			@media (min-width: 500px) {
@@ -126,12 +129,27 @@
 		width: 1px; height: 66px;
 		background: rgba(255, 255, 255, 0.26);
 
+		@keyframes decorLine {
+			0% {
+				transform: translate3d(0,15%,0);
+			}
+			50% {
+				transform: translate3d(0,100%,0);
+			}
+			100% {
+				transform: translate3d(0,15%,0);
+			}
+		}
+
 		&::before {
 			content: '';
 			position: absolute;
-			left: 0; top: 15%;
+			left: 0; top: 0%;
 			width: 100%; height: 45%;
 			background: #FFF;
+
+			//animation: decorLine 2s ease-in-out 0s 1 infinite forwards;
+			animation: decorLine 4s ease 0s infinite normal forwards;
 		}
 	}
 }

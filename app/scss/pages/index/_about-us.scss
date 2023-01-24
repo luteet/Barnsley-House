@@ -77,7 +77,10 @@
 				}
 			}
 
-			width: 300px;
+			width: 200px;
+			@media (min-width: 400px) {
+				width: 300px;
+			}
 			@media (min-width: 675px) {
 				width: 25%;
 				transform: translate3d(10%,45%,0);

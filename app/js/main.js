@@ -16,9 +16,9 @@ body.addEventListener('click', function (event) {
 	// =-=-=-=-=-=-=-=-=-=- <open menu in header> -=-=-=-=-=-=-=-=-=-=-
 
 	if ($('.header__burger')) {
-			menu.forEach(element => {
-				element.classList.toggle('_active')
-			})
+		menu.forEach(element => {
+			element.classList.toggle('_active')
+		})
 	}
 
 	// =-=-=-=-=-=-=-=-=-=- </open menu in header> -=-=-=-=-=-=-=-=-=-=-
@@ -160,6 +160,10 @@ if(document.querySelectorAll('.footer__slider').length) {
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
+
+
+// =-=-=-=-=-=-=-=-=-=-=-=- <Animation> -=-=-=-=-=-=-=-=-=-=-=-=
+
 const storeysItem = document.querySelectorAll('.storeys__item');
 storeysItem.forEach(storeysItem => {
 	const body = storeysItem.querySelector('.storeys__item--body'),
@@ -184,10 +188,10 @@ storeysItem.forEach(storeysItem => {
 var scrollPositionX = 0;
 var scrollPositionY = 0;
 
+function isHidden(el) {
+    return (el.offsetParent === null)
+}
 
-
-
-// =-=-=-=-=-=-=-=-=-=-=-=- <Animation> -=-=-=-=-=-=-=-=-=-=-=-=
 
 gsap.registerPlugin(ScrollTrigger)
 gsap.registerPlugin(TimelineMax)
@@ -233,11 +237,15 @@ animSection.forEach(animSection => {
 				delay: delay,
 				onStart: function() {
 					
-					gsap.to(animArrayElement['element'].querySelectorAll('.anim-text-line > span'), {
+					let spanArray = [];
+					animArrayElement['element'].querySelectorAll('.anim-text-line > span').forEach(span => {
+						if(!isHidden(span)) spanArray.push(span); else span.style.transform = 'translate3d(0,0%,0)'; span.style.opacity = 1;
+					})
+
+					gsap.to(spanArray, {
 						transform: 'translate3d(0,0%,0)',
 						startAt: {
 							transform: 'translate3d(0,100%,0)',
-							
 						},
 						ease:"power2.out",
 						duration: duration,

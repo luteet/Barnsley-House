@@ -128,9 +128,9 @@
 		// .header__nav--body
 
 		&--body {
-			padding-top: var(--height-header);
+			padding-top: var(--height-header); padding-bottom: var(--height-header);
 			@media (min-width: 1015px) {
-				padding-top: 0;
+				padding-top: 0; padding-bottom: 0;
 			}
 			min-height: 100%;
 

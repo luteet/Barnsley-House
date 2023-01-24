@@ -186,6 +186,24 @@ section {
     }
 }
 
+.visible-on-mob {
+    @media (min-width: 501px) {
+        display: none;
+    }
+}
+
+.hide-on-mob-2 {
+    @media (max-width: 465px) {
+        display: none;
+    }
+}
+
+.visible-on-mob-2 {
+    @media (min-width: 466px) {
+        display: none;
+    }
+}
+
 .anim-clip-down {
     opacity: 1;
     clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
@@ -314,5 +332,9 @@ section {
 .scrollbar-thumb {
     background: var(--accent-dark) !important;
     opacity: .7;
+}
+
+.scrollbar-track {
+    background: transparent !important;
 }
 

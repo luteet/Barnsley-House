@@ -2,7 +2,7 @@ body,html {
     -webkit-text-size-adjust: 100%
 }
 
-button,hr,input {
+.swiper-cube,.swiper-flip,button,hr,input {
     overflow: visible
 }
 
@@ -254,7 +254,7 @@ summary {
     box-sizing: content-box
 }
 
-.swiper-button-lock,.swiper-pagination-lock,.swiper-scrollbar-lock {
+.swiper-button-lock,.swiper-pagination-lock {
     display: none
 }
 
@@ -464,10 +464,6 @@ summary {
     line-height: 1
 }
 
-.abous-us__link,.advantages__item--link,.footer__slide--link,.main-title,.storeys__item--info ul li {
-    text-transform: uppercase
-}
-
 .swiper-button-prev,.swiper-rtl .swiper-button-next {
     left: 10px;
     right: auto
@@ -516,10 +512,6 @@ summary {
 .swiper-pagination-bullets-dynamic {
     overflow: hidden;
     font-size: 0
-}
-
-.swiper-cube,.swiper-flip {
-    overflow: visible
 }
 
 .swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
@@ -706,6 +698,10 @@ button.swiper-pagination-bullet {
     border-radius: 10px;
     left: 0;
     top: 0
+}
+
+.swiper-scrollbar-lock {
+    display: none
 }
 
 .swiper-zoom-container {
@@ -1014,6 +1010,10 @@ section {
     clip-path: polygon(0 0,100% 0,100% 0,0 0)
 }
 
+.classicaly__slider--info::before,.footer__slide--body::before {
+    -webkit-clip-path: polygon(95% 0,100% 48%,100% 100%,0 100%,0 0)
+}
+
 .section-dark {
     background: var(--dark);
     padding: 70px 0
@@ -1086,12 +1086,17 @@ section {
     opacity: .7
 }
 
+.scrollbar-track {
+    background: rgba(0,0,0,0)!important
+}
+
 .main-title {
     font-family: var(--title-font);
     font-weight: 700;
-    font-size: 2.75rem;
+    font-size: 2.25rem;
     line-height: 80%;
     letter-spacing: -.015em;
+    text-transform: uppercase;
     margin: 0
 }
 
@@ -1203,6 +1208,7 @@ section {
 
 .header__nav--body {
     padding-top: var(--height-header);
+    padding-bottom: var(--height-header);
     display: flex;
     align-items: center
 }
@@ -1345,10 +1351,15 @@ section {
 }
 
 .intro__info--item {
-    padding: 0 25.25px;
+    padding: 0 15px;
     font-size: .875rem;
     line-height: 133%;
     text-align: center;
+    letter-spacing: -.38px
+}
+
+.abous-us__link,.abous-us__text {
+    line-height: 155.3%;
     letter-spacing: -.38px
 }
 
@@ -1376,13 +1387,39 @@ section {
     background: rgba(255,255,255,.26)
 }
 
+@-webkit-keyframes decorLine {
+    0%,100% {
+        -webkit-transform: translate3d(0,15%,0);
+        transform: translate3d(0,15%,0)
+    }
+
+    50% {
+        -webkit-transform: translate3d(0,100%,0);
+        transform: translate3d(0,100%,0)
+    }
+}
+
+@keyframes decorLine {
+    0%,100% {
+        -webkit-transform: translate3d(0,15%,0);
+        transform: translate3d(0,15%,0)
+    }
+
+    50% {
+        -webkit-transform: translate3d(0,100%,0);
+        transform: translate3d(0,100%,0)
+    }
+}
+
 .intro__decor-line::before {
     position: absolute;
     left: 0;
-    top: 15%;
+    top: 0;
     width: 100%;
     height: 45%;
-    background: #fff
+    background: #fff;
+    -webkit-animation: decorLine 4s ease 0s infinite normal forwards;
+    animation: decorLine 4s ease 0s infinite normal forwards
 }
 
 .abous-us {
@@ -1413,7 +1450,7 @@ section {
     bottom: 0;
     -webkit-transform: translate3d(30%,25%,0);
     transform: translate3d(30%,25%,0);
-    width: 300px
+    width: 200px
 }
 
 .abous-us__decor--element._top {
@@ -1477,16 +1514,13 @@ section {
 }
 
 .abous-us__text {
-    padding-top: 15px;
-    line-height: 155.3%;
-    letter-spacing: -.38px
+    padding-top: 15px
 }
 
 .abous-us__link {
     margin-top: 15px;
     font-size: 1rem;
-    line-height: 155.3%;
-    letter-spacing: -.38px;
+    text-transform: uppercase;
     color: var(--accent);
     display: inline-block;
     position: relative;
@@ -1569,7 +1603,6 @@ section {
 .classicaly__slider--info::before {
     top: 0;
     height: 52px;
-    -webkit-clip-path: polygon(95% 0,100% 48%,100% 100%,0 100%,0 0);
     clip-path: polygon(95% 0,100% 48%,100% 100%,0 100%,0 0)
 }
 
@@ -1644,7 +1677,7 @@ section {
 
 .classicaly__slide--image-body {
     width: 100%;
-    min-height: 732px;
+    min-height: 600px;
     position: relative;
     overflow: hidden
 }
@@ -1947,6 +1980,7 @@ section {
     font-size: 1rem;
     line-height: 155.3%;
     letter-spacing: -.38px;
+    text-transform: uppercase;
     color: rgba(10,30,37,.3)
 }
 
@@ -2014,6 +2048,7 @@ section {
     font-size: 1.125rem;
     line-height: 155.3%;
     letter-spacing: -.38px;
+    text-transform: uppercase;
     color: var(--accent);
     display: inline-block;
     position: relative;
@@ -2210,7 +2245,6 @@ section {
 .footer__slide--body::before {
     top: 0;
     height: 52px;
-    -webkit-clip-path: polygon(95% 0,100% 48%,100% 100%,0 100%,0 0);
     clip-path: polygon(95% 0,100% 48%,100% 100%,0 100%,0 0)
 }
 
@@ -2235,9 +2269,26 @@ section {
 .footer__slide--link {
     display: inline-block;
     margin-top: 15px;
+    text-transform: uppercase;
     line-height: 155.3%;
     letter-spacing: -.38px;
     color: var(--accent)
+}
+
+@media (min-width:350px) {
+    .main-title {
+        font-size: 2.5rem
+    }
+}
+
+@media (min-width:370px) {
+    .main-title {
+        font-size: 2.75rem
+    }
+
+    .intro__info--item {
+        padding: 0 25.25px
+    }
 }
 
 @media (min-width:400px) {
@@ -2262,12 +2313,20 @@ section {
         padding: 113px 0 100px
     }
 
+    .abous-us__decor--element {
+        width: 300px
+    }
+
     .abous-us__text {
         padding-top: 20px
     }
 
     .classicaly__slider--info {
         max-width: 366px
+    }
+
+    .classicaly__slide--image-body {
+        min-height: 732px
     }
 }
 
@@ -2299,6 +2358,12 @@ section {
 
     .footer__slide {
         width: 350px
+    }
+}
+
+@media (min-width:466px) {
+    .visible-on-mob-2 {
+        display: none
     }
 }
 
@@ -2403,6 +2468,12 @@ section {
     .awards__decor--element {
         -webkit-transform: translate(28%,36%);
         transform: translate(28%,36%)
+    }
+}
+
+@media (min-width:501px) {
+    .visible-on-mob {
+        display: none
     }
 }
 
@@ -2906,7 +2977,8 @@ section {
     }
 
     .header__nav--body {
-        padding-top: 0
+        padding-top: 0;
+        padding-bottom: 0
     }
 
     .header__nav--list {
@@ -3299,6 +3371,12 @@ section {
 
 @media (max-width:500px) {
     .hide-on-mob {
+        display: none
+    }
+}
+
+@media (max-width:465px) {
+    .hide-on-mob-2 {
         display: none
     }
 }
