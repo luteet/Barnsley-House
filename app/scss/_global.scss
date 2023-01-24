@@ -38,7 +38,7 @@ body {
 }
 
 .section-container {
-    padding-right: 15px; padding-left: 15px;
+    padding-right: 30px; padding-left: 30px;
     @media (min-width: 400px) {
         padding-right: 30px; padding-left: 30px;
     }
@@ -88,11 +88,7 @@ body {
 }
 
 .section-padding {
-    padding-top: 50px; padding-bottom: 50px;
-
-    @media (min-width: 400px) {
-        padding-top: 90px; padding-bottom: 90px;
-    }
+    padding-top: 90px; padding-bottom: 90px;
 
     @media (min-width: 500px) {
         padding-top: 80px; padding-bottom: 80px;
