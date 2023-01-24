@@ -67,10 +67,10 @@
             margin-top: 55px;
         }
 
-        display: grid;
+        /* display: grid;
         & > * {
             grid-area: 1/1;
-        }
+        } */
 
         // .classicaly__slider--list
 
@@ -103,9 +103,10 @@
                 margin: 0 auto;
             }
 
-            align-self: end;
-
-            position: relative;
+            position: absolute;
+            left: 50%; bottom: 0;
+            transform: translate3d(-50%,0,1px);
+            width: 100%;
             z-index: 100;
         }
 

@@ -1,46 +1,47 @@
 
-const body = document.querySelector('body'),
-		html = document.querySelector('html'),
-		menu = document.querySelectorAll('.header__burger, .header__nav, body'),
-		burger = document.querySelector('.header__burger'),
-		header = document.querySelector('.header');
+const 
+	body = document.querySelector('body'),
+	html = document.querySelector('html'),
+	menu = document.querySelectorAll('.header__burger, .header__nav, body'),
+	burger = document.querySelector('.header__burger'),
+	header = document.querySelector('.header');
 
 
 body.addEventListener('click', function (event) {
 
-		function $(elem) {
-			return event.target.closest(elem)
-		}
+	function $(elem) {
+		return event.target.closest(elem)
+	}
 
-		// =-=-=-=-=-=-=-=-=-=- <open menu in header> -=-=-=-=-=-=-=-=-=-=-
+	// =-=-=-=-=-=-=-=-=-=- <open menu in header> -=-=-=-=-=-=-=-=-=-=-
 
-		if ($('.header__burger')) {
-				menu.forEach(element => {
-						element.classList.toggle('_active')
-				})
-		}
-
-		// =-=-=-=-=-=-=-=-=-=- </open menu in header> -=-=-=-=-=-=-=-=-=-=-
-
-
-		// =-=-=-=-=-=-=-=-=-=-=-=- <scroll on click to section> -=-=-=-=-=-=-=-=-=-=-=-=
-
-		let btnToScroll = $('.btn-to-scroll');
-		if(btnToScroll) {
-			event.preventDefault();
-			let section;
-		
-			section = document.querySelector(btnToScroll.getAttribute('href'))
-		
-			menu.forEach(elem => {
-				elem.classList.remove('_active')
+	if ($('.header__burger')) {
+			menu.forEach(element => {
+				element.classList.toggle('_active')
 			})
-		
-			bodyScrollBar.scrollTo(0,section.offsetTop,section.offsetTop / 1.5);
-		
-		}
-		
-		// =-=-=-=-=-=-=-=-=-=-=-=- </scroll on click to section> -=-=-=-=-=-=-=-=-=-=-=-=
+	}
+
+	// =-=-=-=-=-=-=-=-=-=- </open menu in header> -=-=-=-=-=-=-=-=-=-=-
+
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <scroll on click to section> -=-=-=-=-=-=-=-=-=-=-=-=
+
+	let btnToScroll = $('.btn-to-scroll');
+	if(btnToScroll) {
+		event.preventDefault();
+		let section;
+	
+		section = document.querySelector(btnToScroll.getAttribute('href'))
+	
+		menu.forEach(elem => {
+			elem.classList.remove('_active')
+		})
+	
+		bodyScrollBar.scrollTo(0,section.offsetTop,section.offsetTop / 1.5);
+	
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </scroll on click to section> -=-=-=-=-=-=-=-=-=-=-=-=
 
 })
 
@@ -233,15 +234,13 @@ animSection.forEach(animSection => {
 				onStart: function() {
 					
 					gsap.to(animArrayElement['element'].querySelectorAll('.anim-text-line > span'), {
-						y: 0,
-						//opacity: 1,
+						transform: 'translate3d(0,0%,0)',
 						startAt: {
-							y: '100%',
+							transform: 'translate3d(0,100%,0)',
 							
 						},
 						ease:"power2.out",
 						duration: duration,
-						//ease: "back.inOut(1.7)",
 						stagger: stagger,
 						
 					})
@@ -271,7 +270,7 @@ animSection.forEach(animSection => {
 				}
 			}, (index == 0) ? false : "-=1");
 
-		} else if(animArrayElement['element'].classList.contains('anim-zoom-bottom')) {
+		} /* else if(animArrayElement['element'].classList.contains('anim-zoom-bottom')) {
 			
 			tl.to(animArrayElement['element'], {
 				opacity: 1,
@@ -285,7 +284,7 @@ animSection.forEach(animSection => {
 				delay: delay,
 			}, (index == 0) ? false : "-=1");
 
-		} else if(animArrayElement['element'].classList.contains('anim-fade-right')) {
+		} */ else if(animArrayElement['element'].classList.contains('anim-fade-right')) {
 			
 			tl.to(animArrayElement['element'], {
 				opacity: 1,

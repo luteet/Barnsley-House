@@ -19,7 +19,9 @@ progress,sub,sup {
 }
 
 .bg-img,.intro__bg {
-    -ms-user-select: none
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none
 }
 
 .btn,.header__nav--item,.intro__bg--image,.intro__content,.intro__info--item,.swiper-pagination,.swiper-zoom-container,.txt-center {
@@ -258,6 +260,10 @@ summary {
     box-sizing: content-box
 }
 
+.swiper-button-lock,.swiper-pagination-lock {
+    display: none
+}
+
 .swiper-android .swiper-slide,.swiper-wrapper {
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0)
@@ -478,10 +484,6 @@ summary {
     content: "next"
 }
 
-.swiper-button-lock {
-    display: none
-}
-
 .swiper-pagination {
     position: absolute;
     transition: .3s opacity;
@@ -619,10 +621,6 @@ button.swiper-pagination-bullet {
     transition: .2s transform,.2s right
 }
 
-.swiper-fade.swiper-free-mode .swiper-slide,.swiper-free-mode>.swiper-wrapper {
-    transition-timing-function: ease-out
-}
-
 .swiper-pagination-progressbar {
     background: rgba(0,0,0,.25);
     position: absolute
@@ -658,10 +656,6 @@ button.swiper-pagination-bullet {
     height: 100%;
     left: 0;
     top: 0
-}
-
-.swiper-pagination-lock {
-    display: none
 }
 
 .swiper-scrollbar {
@@ -785,6 +779,7 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-free-mode>.swiper-wrapper {
+    transition-timing-function: ease-out;
     margin: 0 auto
 }
 
@@ -795,6 +790,10 @@ button.swiper-pagination-bullet {
 .swiper-grid-column>.swiper-wrapper {
     flex-wrap: wrap;
     flex-direction: column
+}
+
+.swiper-fade.swiper-free-mode .swiper-slide {
+    transition-timing-function: ease-out
 }
 
 .swiper-fade .swiper-slide {
@@ -987,8 +986,6 @@ section {
     top: 0;
     width: 100%;
     height: 100%;
-    -webkit-user-select: none;
-    -moz-user-select: none;
     user-select: none;
     pointer-events: none;
     -o-object-fit: cover;
@@ -1135,10 +1132,13 @@ section {
     background: rgba(0,0,0,0)
 }
 
-.header__burger span {
+.header__burger span,.header__nav {
     position: absolute;
     left: 0;
-    width: 100%;
+    width: 100%
+}
+
+.header__burger span {
     height: 1px;
     background: var(--white)
 }
@@ -1152,10 +1152,7 @@ section {
 }
 
 .header__nav {
-    position: absolute;
-    left: 0;
     top: 0;
-    width: 100%;
     height: var(--height-screen,100vh);
     background: var(--dark);
     overflow: auto;
@@ -1173,12 +1170,9 @@ section {
     z-index: 2
 }
 
-.classicaly__slide.swiper-slide-active .classicaly__slide--info,.classicaly__slide.swiper-slide-duplicate-active .classicaly__slide--body,.header__nav._active {
-    opacity: 1;
-    visibility: visible
-}
-
 .header__nav._active {
+    opacity: 1;
+    visibility: visible;
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0)
 }
@@ -1295,8 +1289,6 @@ section {
     width: 100%;
     height: 100%;
     z-index: -2;
-    -webkit-user-select: none;
-    -moz-user-select: none;
     user-select: none;
     pointer-events: none;
     overflow: hidden;
@@ -1538,15 +1530,7 @@ section {
     position: relative;
     z-index: 100;
     margin-top: 65px;
-    padding: 0 15px 5px;
-    display: -ms-grid;
-    display: grid
-}
-
-.classicaly__slider>* {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: 1/1
+    padding: 0 15px 5px
 }
 
 .classicaly__slider--list {
@@ -1555,11 +1539,13 @@ section {
 
 .classicaly__slider--container {
     max-width: 1220px;
-    width: 100%;
     margin: 0 auto -5px 8px;
-    -ms-grid-row-align: end;
-    align-self: end;
-    position: relative;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    -webkit-transform: translate3d(-50%,0,1px);
+    transform: translate3d(-50%,0,1px);
+    width: 100%;
     z-index: 100
 }
 
@@ -1633,6 +1619,11 @@ section {
 .classicaly__slide.swiper-slide-duplicate-next .classicaly__slide--body,.classicaly__slide.swiper-slide-next .classicaly__slide--body {
     -webkit-transform: scale3d(.88,.88,1) translate3d(-8%,0,0);
     transform: scale3d(.88,.88,1) translate3d(-8%,0,0)
+}
+
+.classicaly__slide.swiper-slide-active .classicaly__slide--info,.classicaly__slide.swiper-slide-duplicate-active .classicaly__slide--body {
+    opacity: 1;
+    visibility: visible
 }
 
 .classicaly__slide--body {
