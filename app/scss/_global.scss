@@ -55,7 +55,7 @@ body {
         padding-left: max(130px, calc(50% - 590px)); padding-right: max(130px, calc(50% - 590px));
     }
     &._large {
-        padding-right: 15px; padding-left: 15px;
+        padding-right: 30px; padding-left: 30px;
         @media (min-width: 400px) {
             padding-right: 30px; padding-left: 30px;
         }
@@ -68,7 +68,7 @@ body {
     }
 
     &._alt {
-        padding-right: 15px; padding-left: 15px;
+        padding-right: 30px; padding-left: 30px;
         @media (min-width: 400px) {
             padding-right: 30px; padding-left: 30px;
         }

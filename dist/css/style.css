@@ -955,14 +955,9 @@ body._active,body._popup-active {
     flex: 1 0 auto
 }
 
-.section-container {
+.section-container,.section-container._alt,.section-container._large {
     padding-right: 30px;
     padding-left: 30px
-}
-
-.section-container._alt,.section-container._large {
-    padding-right: 15px;
-    padding-left: 15px
 }
 
 .section-padding {
