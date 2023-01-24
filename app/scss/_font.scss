@@ -2,14 +2,12 @@
 .main-title {
     font-family: var(--title-font);
     font-weight: 700;
-    font-size: 4.875rem;
+    font-size: 2.75rem;
     line-height: 80%;
     letter-spacing: -0.015em;
     text-transform: uppercase;
 
     margin: 0;
-
-    font-size: 3rem;
 
     @media (min-width: 675px) {
         font-size: 3.9375rem;
@@ -25,7 +23,7 @@
     }
 }
 
-.title {
+/* .title {
     
     font-family: var(--title-font);
     font-weight: 700;
@@ -43,7 +41,7 @@
     &._min {
 
     }
-}
+} */
 
 .section-title {
 

@@ -128,8 +128,6 @@
 				margin: 14.5px 0;
 			}
 
-			
-
 			@media (min-width: 1015px) {
 				margin: 24.5px 0;
 			}
@@ -205,20 +203,6 @@
 
 				transition: background .4s ease-in-out, height .3s ease-in-out;
 				z-index: -1;
-			}
-
-			&:hover {
-				color: var(--white);
-				&::before {
-					background: var(--accent-light);
-					height: 100%;
-				}
-			}
-			
-			&:active {
-				&::before {
-					background: var(--accent-dark);
-				}
 			}
 		}
 	}

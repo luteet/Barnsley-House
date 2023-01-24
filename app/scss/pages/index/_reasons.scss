@@ -43,11 +43,7 @@
 	}
 
 	&__wrapper {
-		padding-left: 15px;
-
-        @media (min-width: 400px) {
-            padding-left: 30px;
-        }
+		padding-left: 30px;
 
         @media (min-width: 675px) {
             padding-left: 64px;

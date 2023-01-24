@@ -80,11 +80,13 @@
 		@media (min-width: 855px) {
 			margin-top: 147px;
 		}
+
 		overflow: visible;
 
 		// .footer__slider--wrapper
 
 		&--wrapper {
+			cursor: grab;
 		}
 
 		// .footer__slider--slide

@@ -270,27 +270,13 @@ animSection.forEach(animSection => {
 				}
 			}, (index == 0) ? false : "-=1");
 
-		} /* else if(animArrayElement['element'].classList.contains('anim-zoom-bottom')) {
-			
-			tl.to(animArrayElement['element'], {
-				opacity: 1,
-				y: 0,
-				scale: 1,
-				startAt: {
-					y: -100,
-					scale: 0.9
-				},
-				duration: duration,
-				delay: delay,
-			}, (index == 0) ? false : "-=1");
-
-		} */ else if(animArrayElement['element'].classList.contains('anim-fade-right')) {
+		} else if(animArrayElement['element'].classList.contains('anim-fade-right')) {
 			
 			tl.to(animArrayElement['element'], {
 				opacity: 1,
 				transform: 'translate3d(0,0,0)',
 				startAt: {
-					transform: 'translate3d(-100px,0,0)',
+					transform: 'translate3d(-20px,0,0)',
 				},
 				duration: duration,
 				delay: delay,
@@ -302,7 +288,7 @@ animSection.forEach(animSection => {
 				opacity: 1,
 				transform: 'translate3d(0,0,0)',
 				startAt: {
-					transform: 'translate3d(100px,0,0)',
+					transform: 'translate3d(20px,0,0)',
 				},
 				duration: duration,
 				delay: delay,
@@ -423,11 +409,7 @@ animSection.forEach(animSection => {
 
 })
 
-//gsap.fromTo()
-
 function animScroll() {
-
-	//console.log('scroll')
 
 	Array.from(animSectionArray).forEach((animArrayElement, index) => {
 		const element = animArrayElement[0],
@@ -442,26 +424,6 @@ function animScroll() {
 }
 
 const scrollImages = document.querySelectorAll('.anim-scroll-image');
-
-/* scrollImages.forEach(scrollImage => {
-	gsap.to(scrollImage, {
-		transform: 'translate3d(0,50px,0)',
-		startAt: {
-			transform: 'translate3d(0,0,0)',
-		},
-		scrollTrigger: {
-			trigger: scrollImage,
-			
-			scrub: true,
-			start: "top",
-			end: "bottom",
-		}
-	})
-}) */
-
-/* window.onload = function () {
-	animScroll();
-} */
 
 animScroll()
 
@@ -488,12 +450,6 @@ function smoothScrollbarInit() {
 				  scrollImage.style.transform = `translate3d(0,${offset.y / 7}px,0)`;
 			  }
 			  
-		  } else if(scrollImage.dataset.pos == "to-top") {
-  
-			  /* if(scrollImage.closest('section').offsetTop > scrollPositionY - (window.innerHeight / 2)) {
-				  scrollImage.style.transform = `translate3d(0,${(scrollImage.closest('section').offsetTop - offset.y) / 20}px,0)`;
-			  } */
-  
 		  } else {
 			  
 			  if(document.querySelector(scrollImage.dataset.anchor).offsetTop > scrollPositionY - (window.innerHeight / 2)) {
@@ -512,17 +468,8 @@ function smoothScrollbarInit() {
 	
   }
   
-  
-  
   smoothScrollbarInit();
   bodyScrollBar.setPosition(0, 0);
   bodyScrollBar.track.xAxis.element.remove();
-//document.querySelector('[data-scrollbar]').addEventListener('scroll', animScroll)
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </Animation> -=-=-=-=-=-=-=-=-=-=-=-=
-/* 
-ScrollSmoother.create({
-	smooth: 1,               // how long (in seconds) it takes to "catch up" to the native scroll position
-	effects: true,           // looks for data-speed and data-lag attributes on elements
-	smoothTouch: 0.1,        // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
-}); */
