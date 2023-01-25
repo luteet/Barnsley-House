@@ -2,14 +2,16 @@
 	flex: 0 0 auto;
 	position: relative;
 
-	
-
 	padding-bottom: 62px;
 	@media (min-width: 675px) {
 		padding-bottom: 75px;
 	}
 
 	padding-top: 0px;
+
+	&__slider-container {
+		overflow: hidden;
+	}
 
 	// .footer__bg
 
