@@ -29,8 +29,12 @@
 
 			&._top {
 				bottom: auto; top: 0;
-				width: 500px;
-				transform: translate3d(55%,-68%,0);
+				width: 300px;
+				transform: translate3d(65%,-88%,0);
+				@media (min-width: 400px) {
+					width: 500px;
+					transform: translate3d(55%,-68%,0);
+				}
 				@media (min-width: 675px) {
 					width: 65%;
 					transform: translate3d(55%,-57%,0);
@@ -54,8 +58,12 @@
 
 			&._left {
 				right: auto; left: 0;
-				width: 1000px;
-				transform: translate3d(-63%,12%,0);
+				width: 600px;
+				transform: translate3d(-60%,1%,0);
+				@media (min-width: 400px) {
+					width: 1000px;
+					transform: translate3d(-63%,12%,0);
+				}
 				@media (min-width: 675px) {
 					width: 100%;
 					transform: translate3d(-63%,35%,0);

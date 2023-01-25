@@ -14,10 +14,14 @@
 		&--element {
 			position: absolute;
 			right: 0; bottom: 0;
-			max-width: 1096px;
-			width: 1096px;
+			width: 800px;
 
-			transform: translate(71%,-25%);
+			transform: translate(87%,-45%);
+			@media (min-width: 400px) {
+				max-width: 1096px;
+				width: 1096px;
+				transform: translate(71%,-25%);
+			}
 			@media (min-width: 500px) {
 				transform: translate(71%,35%);
 			}
