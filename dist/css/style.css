@@ -2051,7 +2051,7 @@ section {
     align-self: flex-start;
     z-index: 2;
     margin-top: 15px;
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height: 155.3%;
     letter-spacing: -.38px;
     text-transform: uppercase;
@@ -2725,7 +2725,8 @@ section {
     }
 
     .advantages__item--link {
-        margin-top: 26px
+        margin-top: 26px;
+        font-size: 1.125rem
     }
 
     .awards__decor--element {
