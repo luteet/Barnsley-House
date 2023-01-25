@@ -7,43 +7,7 @@ const
 	header = document.querySelector('.header');
 
 
-body.addEventListener('click', function (event) {
 
-	function $(elem) {
-		return event.target.closest(elem)
-	}
-
-	// =-=-=-=-=-=-=-=-=-=- <open menu in header> -=-=-=-=-=-=-=-=-=-=-
-
-	if ($('.header__burger')) {
-		menu.forEach(element => {
-			element.classList.toggle('_active')
-		})
-	}
-
-	// =-=-=-=-=-=-=-=-=-=- </open menu in header> -=-=-=-=-=-=-=-=-=-=-
-
-
-	// =-=-=-=-=-=-=-=-=-=-=-=- <scroll on click to section> -=-=-=-=-=-=-=-=-=-=-=-=
-
-	let btnToScroll = $('.btn-to-scroll');
-	if (btnToScroll) {
-		event.preventDefault();
-		let section;
-
-		section = document.querySelector(btnToScroll.getAttribute('href'))
-
-		menu.forEach(elem => {
-			elem.classList.remove('_active')
-		})
-
-		bodyScrollBar.scrollTo(0, section.offsetTop, section.offsetTop / 1.5);
-
-	}
-
-	// =-=-=-=-=-=-=-=-=-=-=-=- </scroll on click to section> -=-=-=-=-=-=-=-=-=-=-=-=
-
-})
 
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <resize> -=-=-=-=-=-=-=-=-=-=-=-=
@@ -429,6 +393,8 @@ function smoothScrollbarInit() {
 		scrollPositionX = offset.x;
 		scrollPositionY = offset.y;
 
+		if(body.classList.contains('_active')) bodyScrollBar.setPosition(0, 0, 0);
+
 		scrollImages.forEach(scrollImage => {
 
 			if (scrollImage.dataset.pos == "to-bottom") {
@@ -457,7 +423,9 @@ function smoothScrollbarInit() {
 
 smoothScrollbarInit();
 bodyScrollBar.setPosition(0, 0);
+bodyScrollBar.limit.y = 0;
 bodyScrollBar.track.xAxis.element.remove();
+bodyScrollBar.update()
 
 const startImage = document.querySelector('.start-image');
 
@@ -500,3 +468,43 @@ startImage.addEventListener('load', function () {
 })
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </Animation> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+body.addEventListener('click', function (event) {
+
+	function $(elem) {
+		return event.target.closest(elem)
+	}
+
+	// =-=-=-=-=-=-=-=-=-=- <open menu in header> -=-=-=-=-=-=-=-=-=-=-
+
+	if ($('.header__burger')) {
+		menu.forEach(element => {
+			bodyScrollBar.scrollTo(0,0,1000)
+			element.classList.toggle('_active')
+		})
+	}
+
+	// =-=-=-=-=-=-=-=-=-=- </open menu in header> -=-=-=-=-=-=-=-=-=-=-
+
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <scroll on click to section> -=-=-=-=-=-=-=-=-=-=-=-=
+
+	let btnToScroll = $('.btn-to-scroll');
+	if (btnToScroll) {
+		event.preventDefault();
+		let section;
+
+		section = document.querySelector(btnToScroll.getAttribute('href'))
+
+		menu.forEach(elem => {
+			elem.classList.remove('_active')
+		})
+		
+		bodyScrollBar.scrollTo(0, section.offsetTop, section.offsetTop / 1.5);
+
+	}
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- </scroll on click to section> -=-=-=-=-=-=-=-=-=-=-=-=
+
+})

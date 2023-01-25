@@ -556,6 +556,10 @@ button.swiper-pagination-bullet {
     appearance: none
 }
 
+.section-padding,.section-padding-bottom {
+    padding-bottom: 90px
+}
+
 .swiper-pagination-clickable .swiper-pagination-bullet {
     cursor: pointer
 }
@@ -953,16 +957,11 @@ body._active,body._popup-active {
 }
 
 .section-padding {
-    padding-top: 90px;
-    padding-bottom: 90px
+    padding-top: 90px
 }
 
 .section-margin-bottom {
-    margin-bottom: 40px
-}
-
-.section-padding-bottom {
-    padding-bottom: 40px
+    margin-bottom: 90px
 }
 
 section {
@@ -2294,14 +2293,6 @@ section {
     .section-container,.section-container._alt,.section-container._large {
         padding-right: 30px;
         padding-left: 30px
-    }
-
-    .section-margin-bottom {
-        margin-bottom: 90px
-    }
-
-    .section-padding-bottom {
-        padding-bottom: 90px
     }
 
     .section-dark {

@@ -106,10 +106,7 @@ body {
 }
 
 .section-margin-bottom {
-    margin-bottom: 40px;
-    @media (min-width: 400px) {
-        margin-bottom: 90px;
-    }
+    margin-bottom: 90px;
     @media (min-width: 500px) {
         margin-bottom: 80px;
     }
@@ -122,10 +119,7 @@ body {
 }
 
 .section-padding-bottom {
-    padding-bottom: 40px;
-    @media (min-width: 400px) {
-        padding-bottom: 90px;
-    }
+    padding-bottom: 90px;
     @media (min-width: 500px) {
         padding-bottom: 80px;
     }
